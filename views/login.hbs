@@ -3,7 +3,7 @@
         <h3>Log In</h3>
         <div class="divider"></div>
         <div class="row">
-            <form class="col s12">
+            <form class="col s12" action="/users/login" , method="POST">
                 <div class="row field">
                     <div class="input-field col s12">
                         <input id="email" type="email" class="validate">
@@ -16,13 +16,14 @@
                         <label for="password">Password</label>
                     </div>
                 </div>
+                <div class="row bottom">
+                    <div class="col s12">
+                        <button type="submit" class="btn cyan darken-1 waves-effect waves-light login-btn">Log
+                            In</button>
+                    </div>
+                    <small>Need an account? <a href="/users/register">Register here</a></small>
+                </div>
             </form>
-        </div>
-        <div class="row bottom">
-            <div class="col s12">
-                <button href="/dashboard" class="btn cyan darken-1 waves-effect waves-light login-btn">Log In</button>
-            </div>
-            <small>Need an account? <a href="/users/register">Register here</a></small>
         </div>
     </div>
 </div>
