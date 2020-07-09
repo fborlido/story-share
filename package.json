@@ -1,0 +1,33 @@
+{
+  "name": "auth-page",
+  "version": "1.0.0",
+  "description": "General authentication page using Node.js, Passport and MongoDB.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fborlido/auth-page.git"
+  },
+  "author": "Frederico Borlido",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fborlido/auth-page/issues"
+  },
+  "homepage": "https://github.com/fborlido/auth-page#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.0.0",
+    "express-session": "^1.17.1",
+    "mongoose": "^5.9.22",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

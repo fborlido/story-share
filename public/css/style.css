@@ -1,0 +1,64 @@
+.main-container {
+    width: 500px !important;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.card-content h3 {
+    margin-top: 7px;
+}
+
+.welcome-btn {
+    width: 200px;
+}
+
+.waves-effect.waves-custom .waves-ripple {
+    /* The alpha value allows the text and background color
+    of the button to still show through. */
+     background-color: rgba(0, 172, 193, 0.65);
+}
+
+.field {
+    margin: 0 !important;
+}
+
+.login-btn {
+    width: 90%;
+}
+
+/* ---- Email ---- */
+/* label focus color */
+.input-field input[type=email]:not(.browser-default):focus:not([readonly]) + label {
+    color: #00acc1 !important;
+}
+/* label underline focus color */
+.input-field input[type=email]:not(.browser-default):focus:not([readonly]) {
+    border-bottom: 1px solid #00acc1 !important;
+    box-shadow: 0 1px 0 0 #00acc1 !important;
+}
+
+/* ---- Password ---- */
+/* label focus color */
+.input-field input[type=password]:not(.browser-default):focus:not([readonly]) + label {
+    color: #00acc1 !important;
+}
+/* label underline focus color */
+.input-field input[type=password]:not(.browser-default):focus:not([readonly]) {
+    border-bottom: 1px solid #00acc1 !important;
+    box-shadow: 0 1px 0 0 #00acc1 !important;
+}
+
+/* ---- Text ---- */
+/* label focus color */
+.input-field input[type=text]:not(.browser-default):focus:not([readonly]) + label {
+    color: #00acc1 !important;
+}
+/* label underline focus color */
+.input-field input[type=text]:not(.browser-default):focus:not([readonly]) {
+    border-bottom: 1px solid #00acc1 !important;
+    box-shadow: 0 1px 0 0 #00acc1 !important;
+}
+
+.bottom a {
+    color: #00acc1;
+}
