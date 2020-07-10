@@ -87,7 +87,6 @@ router.post('/register', (req, res) => {
 // Log In Post
 router.post('/login', (req, res, next) => {
     const { email, password } = req.body;
-    console.log(req.body);
     let errors = [];
 
     // check fields
@@ -114,6 +113,13 @@ router.post('/login', (req, res, next) => {
         })(req, res, next);
     }
 });
+
+//Logout Handle
+router.get('/logout', (req, res) => {
+    req.logout();
+    req.flash('success_msg', 'Goodbye!');
+    res.redirect('/users/login');
+}) 
 
 function validateEmail(email) {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
