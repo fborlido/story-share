@@ -13,7 +13,12 @@ dotenv.config({ path: './config/config.env' });
 connectDB();
 
 // View Engine
-app.engine('.hbs', exphbs({extname: '.hbs'}));
+app.engine('.hbs', exphbs({
+    extname: '.hbs',
+    defaultLayout: 'main', 
+    layoutsDir: __dirname + '/views/layouts/',
+    partialsDir: __dirname + '/views/partials/'
+}));
 app.set('view engine', '.hbs');
 
 // Body Parser

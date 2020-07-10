@@ -2,17 +2,20 @@
     <div class="card-content">
         <h3>Log In</h3>
         <div class="divider"></div>
+        {{#if errors}}
+            {{> errorsPartial}}
+        {{/if}}
         <div class="row">
             <form class="col s12" action="/users/login" , method="POST">
                 <div class="row field">
                     <div class="input-field col s12">
-                        <input id="email" type="email" class="validate">
+                        <input id="email" type="email" class="validate" name="email" value={{e_value}}>
                         <label for="email">Email</label>
                     </div>
                 </div>
                 <div class="row field">
                     <div class="input-field col s12">
-                        <input id="password" type="password" class="validate">
+                        <input id="password" type="password" class="validate" name="password" value={{p_value}}>
                         <label for="password">Password</label>
                     </div>
                 </div>

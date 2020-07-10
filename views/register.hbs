@@ -2,33 +2,36 @@
     <div class="card-content">
         <h3>Register</h3>
         <div class="divider"></div>
+        {{#if errors}}
+            {{> errorsPartial}}
+        {{/if}}
         <div class="row">
             <form class="col s12" action="/users/register", method="POST">
                 <div class="row field">
                     <div class="input-field col s6">
-                        <input id="first_name" type="text" name="first_name" class="validate">
+                        <input id="first_name" type="text" name="first_name" class="validate" value={{fn_value}}>
                         <label for="first_name">First Name</label>
                     </div>
                     <div class="input-field col s6">
-                        <input id="last_name" type="text" name="last_name" class="validate">
+                        <input id="last_name" type="text" name="last_name" class="validate" value={{ln_value}}>
                         <label for="last_name">Last Name</label>
                     </div>
                 </div>
                 <div class="row field">
                     <div class="input-field col s12">
-                        <input id="email" type="email", name="email" class="validate">
+                        <input id="email" type="email", name="email" class="validate" value={{e_value}}>
                         <label for="email">Email</label>
                     </div>
                 </div>
                 <div class="row field">
                     <div class="input-field col s12">
-                        <input id="password" type="password" name="password" class="validate">
+                        <input id="password" type="password" name="password" class="validate" value={{p_value}}>
                         <label for="password">Password</label>
                     </div>
                 </div>
                 <div class="row field">
                     <div class="input-field col s12">
-                        <input id="confirm_password" type="password" name="confirm_password" class="validate">
+                        <input id="confirm_password" type="password" name="confirm_password" class="validate" value={{cp_value}}>
                         <label for="confirm_password">Confirm Password</label>
                     </div>
                 </div>
