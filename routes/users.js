@@ -1,5 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const bcrypt = require('bcryptjs');
+const passport = require('passport');
+
+const User = require('../models/User');
 
 // Log In Page
 router.get('/login', (req, res) => res.render('login'));
@@ -36,14 +40,52 @@ router.post('/register', (req, res) => {
             p_value: password,
             cp_value: confirm_password
         });
-        console.log(errors);
     } else {
-        res.redirect('dashboard');
+        // Check user exists
+        User.findOne({ email: email }).then(user => {
+            if (user) {
+                errors.push({ msg: 'User already exists.' });
+                res.render('register', {
+                    errors,
+                    fn_value: first_name,
+                    ln_value: last_name,
+                    e_value: email,
+                    p_value: password,
+                    cp_value: confirm_password
+                });
+            } else {
+                // Create new User
+                var name = first_name.concat(' ').concat(last_name);
+                const newUser = new User({
+                    name,
+                    email,
+                    password
+                });
+
+                // Encrypt password
+                bcrypt.genSalt(10, (err, salt) => {
+                    bcrypt.hash(newUser.password, salt, (err, hash) => {
+                      if (err) throw err;
+                      newUser.password = hash;
+                      newUser
+                        .save()
+                        .then(user => {
+                          req.flash(
+                            'success_msg',
+                            'You are now registered and can log in'
+                          );
+                          res.redirect('/users/login');
+                        })
+                        .catch(err => console.log(err));
+                    });
+                  });
+            }
+        })
     }
 });
 
 // Log In Post
-router.post('/login', (req, res) => {
+router.post('/login', (req, res, next) => {
     const { email, password } = req.body;
     console.log(req.body);
     let errors = [];
@@ -65,7 +107,11 @@ router.post('/login', (req, res) => {
             p_value: password,
         });
     } else {
-        res.redirect('/dashboard');
+        passport.authenticate('local', {
+            successRedirect: '/dashboard',
+            failureRedirect: '/users/login',
+            failureFlash: true
+        })(req, res, next);
     }
 });
 

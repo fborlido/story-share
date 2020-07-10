@@ -2,9 +2,7 @@
     <div class="card-content">
         <h3>Log In</h3>
         <div class="divider"></div>
-        {{#if errors}}
             {{> errorsPartial}}
-        {{/if}}
         <div class="row">
             <form class="col s12" action="/users/login" , method="POST">
                 <div class="row field">

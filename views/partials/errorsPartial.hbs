@@ -1,6 +1,22 @@
-{{#each errors}}
+{{#if errors}}
+    {{#each errors}}
+        <dialog id="materialert" class="materialert">
+            <span>{{msg}}</span>
+            <button onClick="closeAlert()" id="close-btn" type="button" class="close-alert">×</button>
+        </dialog>
+    {{/each}}
+{{/if}}
+
+{{#if success_msg}}
     <dialog id="materialert" class="materialert">
-        <span>{{msg}}</span>
+        <span>{{success_msg}}</span>
         <button onClick="closeAlert()" id="close-btn" type="button" class="close-alert">×</button>
     </dialog>
-{{/each}}
+{{/if}}
+
+{{#if error}}
+    <dialog id="materialert" class="materialert">
+        <span>{{error}}</span>
+        <button onClick="closeAlert()" id="close-btn" type="button" class="close-alert">×</button>
+    </dialog>
+{{/if}}
