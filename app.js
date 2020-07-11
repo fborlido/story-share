@@ -57,6 +57,7 @@ app.use(function (req, res, next) {
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
 app.use('/profile', require('./routes/profile'));
+app.use('/stories', require('./routes/stories'));
 
 // Static Folder
 app.use(express.static(path.join(__dirname, 'public')));

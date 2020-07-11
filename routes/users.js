@@ -6,10 +6,10 @@ const passport = require('passport');
 const User = require('../models/User');
 
 // Log In Page
-router.get('/login', (req, res) => res.render('login'));
+router.get('/login', (req, res) => res.render('auth/login'));
 
 // Register Page
-router.get('/register', (req, res) => res.render('register', errors = false));
+router.get('/register', (req, res) => res.render('auth/register', errors = false));
 
 // Register Post
 router.post('/register', (req, res) => {
@@ -32,7 +32,7 @@ router.post('/register', (req, res) => {
     }
 
     if (errors.length > 0) {
-        res.render('register', {
+        res.render('auth/register', {
             errors,
             fn_value: first_name,
             ln_value: last_name,
@@ -45,7 +45,7 @@ router.post('/register', (req, res) => {
         User.findOne({ email: email }).then(user => {
             if (user) {
                 errors.push({ msg: 'User already exists.' });
-                res.render('register', {
+                res.render('auth/register', {
                     errors,
                     fn_value: first_name,
                     ln_value: last_name,
@@ -100,7 +100,7 @@ router.post('/login', (req, res, next) => {
     }
 
     if (errors.length > 0) {
-        res.render('login', {
+        res.render('auth/login', {
             errors,
             e_value: email,
             p_value: password,
