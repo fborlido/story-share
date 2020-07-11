@@ -3,19 +3,9 @@
         <main class="container">
             <h3 style="padding: 0.75rem;">Your personal Stories</h3>
             <div class="row">
-                <div class="col s12 m6 l6">
-                    <div class="card story-post">
-                        <div class="card-content">
-                            <a href="#" class="card-title custom-text">{{name}}</a>
-                            <p>I am a very simple card. I am good at containing small bits of information. I am convenient
-                                because I require little markup to use effectively.</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">Edit</a>
-                            <a href="#">Delete</a>
-                        </div>
-                    </div>
-                </div>
+                {{#each stories}}
+                    {{>mystorycard}}
+                {{/each}}
             </div>
         </main>
     {{>footer}}

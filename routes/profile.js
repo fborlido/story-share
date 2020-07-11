@@ -2,10 +2,14 @@ const express = require('express');
 const router = express.Router();
 const { ensureAuthenticated } = require('../config/auth');
 
+const Story = require('../models/Story');
+
 // My Stories
 router.get('/mystories', ensureAuthenticated, (req, res) => { 
-    res.render('profile/mystories', {
-        name: req.user.name
+    Story.find({ author: req.user.name }).lean().exec((err, docs) => {
+        res.render('profile/mystories', {
+            stories: docs,
+        });
     });
 });
 
