@@ -1,5 +1,5 @@
 {
-  "name": "auth-page",
+  "name": "story-share",
   "version": "1.0.0",
   "description": "General authentication page using Node.js, Passport and MongoDB.",
   "main": "app.js",

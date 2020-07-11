@@ -1,7 +1,14 @@
 .main-container {
-    width: 500px !important;
+    width: 600px !important;
     text-align: center;
     margin-top: 50px;
+}
+
+.dash-container {
+    width: 100% !important;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 .card-content h3 {
@@ -10,6 +17,14 @@
 
 .welcome-btn {
     width: 200px;
+}
+
+.card-action {
+    text-align: right;
+}
+
+.custom-text {
+    color: #00acc1;
 }
 
 .waves-effect.waves-custom .waves-ripple {
@@ -24,6 +39,10 @@
 
 .login-btn {
     width: 90%;
+}
+
+.our-logo {
+    position: relative !important;
 }
 
 /* ---- Email ---- */
@@ -100,4 +119,8 @@
     position: absolute;
     top: 16px;
     right: 5px;
+}
+
+main {
+    flex: 1 0 auto;
 }
