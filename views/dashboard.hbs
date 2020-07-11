@@ -1,20 +1,70 @@
 <div class="dash-container">
-    <header class="navbar-fixed">
-        <nav class="cyan darken-1">
-            <div class="container">
-                <div class="nav-wrapper">
-                    <a href="/dashboard" class="left brand-logo our-logo">StoryShare</a>
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><a href="#">Profile</a></li>
-                        <li><a href="/users/logout">LogOut</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
+    {{>navBar}}
     <main class="container" style="margin-top: 50px;">
         <div class="row">
+            {{>storycard}}
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-content">
+                        <a href="#" class="card-title custom-text">Card Title</a>
+                        <p>I am a very simple card. I am good at containing small bits of information.
+                            I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">Jon Snow</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-content">
+                        <a href="#" class="card-title custom-text">Card Title</a>
+                        <p>I am a very simple card. I am good at containing small bits of information.
+                            I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">Jon Snow</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-content">
+                        <a href="#" class="card-title custom-text">Card Title</a>
+                        <p>I am a very simple card. I am good at containing small bits of information. I am convenient
+                            because I
+                            require little markup to use effectively.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">Jon Snow</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-content">
+                        <a href="#" class="card-title">Card Title</a>
+                        <p>I am a very simple card. I am good at containing small bits of information. I am convenient
+                            because I
+                            require little markup to use effectively.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">Jon Snow</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-content">
+                        <a href="#" class="card-title">Card Title</a>
+                        <p>I am a very simple card. I am good at containing small bits of information.
+                            I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">Jon Snow</a>
+                    </div>
+                </div>
+            </div>
             <div class="col s12 m6 l4">
                 <div class="card story-post">
                     <div class="card-content">
@@ -23,7 +73,7 @@
                             because I require little markup to use effectively.</p>
                     </div>
                     <div class="card-action">
-                        <a href="#">John Smith</a>
+                        <a href="#">Jon Snow</a>
                     </div>
                 </div>
             </div>
@@ -35,7 +85,7 @@
                             I am convenient because I require little markup to use effectively.</p>
                     </div>
                     <div class="card-action">
-                        <a href="#">John Smith</a>
+                        <a href="#">Jon Snow</a>
                     </div>
                 </div>
             </div>
@@ -47,7 +97,7 @@
                             I am convenient because I require little markup to use effectively.</p>
                     </div>
                     <div class="card-action">
-                        <a href="#">John Smith</a>
+                        <a href="#">Jon Snow</a>
                     </div>
                 </div>
             </div>
@@ -60,7 +110,7 @@
                             require little markup to use effectively.</p>
                     </div>
                     <div class="card-action">
-                        <a href="#">John Smith</a>
+                        <a href="#">Jon Snow</a>
                     </div>
                 </div>
             </div>
@@ -73,7 +123,7 @@
                             require little markup to use effectively.</p>
                     </div>
                     <div class="card-action">
-                        <a href="#">John Smith</a>
+                        <a href="#">Jon Snow</a>
                     </div>
                 </div>
             </div>
@@ -85,29 +135,11 @@
                             I am convenient because I require little markup to use effectively.</p>
                     </div>
                     <div class="card-action">
-                        <a href="#">John Smith</a>
+                        <a href="#">Jon Snow</a>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-
-    <footer class="page-footer grey lighten-1">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5>StoryShare</h5>
-                    <p class="grey-text text-lighten-4">The place where you can share all your stories with your
-                        friends!
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container">
-                © 2020 Frederico Borlido
-            </div>
-        </div>
-    </footer>
-    
+    {{>footer}}    
 </div>

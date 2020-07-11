@@ -45,6 +45,10 @@
     position: relative !important;
 }
 
+.dropdown-content {
+    top: 62px !important;
+}
+
 /* ---- Email ---- */
 /* label focus color */
 .input-field input[type=email]:not(.browser-default):focus:not([readonly]) + label {
