@@ -19,12 +19,16 @@ dotenv.config({ path: './config/config.env' });
 
 connectDB();
 
+// Handlebars Helpers
+const truncate = require('./helpers/truncate');
+
 // View Engine
 app.engine('.hbs', exphbs({
     extname: '.hbs',
     defaultLayout: 'main',
     layoutsDir: __dirname + '/views/layouts/',
-    partialsDir: __dirname + '/views/partials/'
+    partialsDir: __dirname + '/views/partials/',
+    helpers: { truncate }
 }));
 app.set('view engine', '.hbs');
 
