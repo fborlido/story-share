@@ -21,6 +21,7 @@ connectDB();
 
 // Handlebars Helpers
 const truncate = require('./helpers/truncate');
+const enterlines = require('./helpers/enterlines');
 
 // View Engine
 app.engine('.hbs', exphbs({
@@ -28,7 +29,7 @@ app.engine('.hbs', exphbs({
     defaultLayout: 'main',
     layoutsDir: __dirname + '/views/layouts/',
     partialsDir: __dirname + '/views/partials/',
-    helpers: { truncate }
+    helpers: { truncate, enterlines }
 }));
 app.set('view engine', '.hbs');
 

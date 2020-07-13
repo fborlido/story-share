@@ -23,6 +23,11 @@ router.post('/create', ensureAuthenticated, (req, res) => {
     // Check num. characters
     else if (content.length < 150) {
         errors.push({ msg: 'Your story needs to have at least 150 characters!' });
+    } 
+    
+    // check whitespace
+    else if (!content.replace(/\s/g, '').length) {
+        errors.push({ msg: 'Your story only contains whitespace.' });
     }
 
     if (errors.length > 0) {
@@ -49,9 +54,13 @@ router.post('/create', ensureAuthenticated, (req, res) => {
 router.get('/:id', ensureAuthenticated, async (req, res) => {
     let story = await Story.findById(req.params.id).lean();
     res.render('stories/showStory', {
-        story
+        story,
+        sentence: enterlines(story.content)
     });
 });
 
+const enterlines = (str) => {
+    return str.split("\r\n");
+}
 
 module.exports = router;

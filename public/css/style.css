@@ -16,7 +16,7 @@
 }
 
 .card-content {
-    overflow: hidden !important;
+    word-wrap: break-word;
 }
 
 .welcome-btn {
@@ -29,6 +29,11 @@
 
 .custom-text {
     color: #00acc1;
+}
+
+.profile-card {
+    position: sticky !important;
+    top: 80px !important;
 }
 
 .waves-effect.waves-custom .waves-ripple {

@@ -1,1 +1,28 @@
-<h1>{{story.title}}</h1>
+<div class="dash-container">
+    {{>navBar}}
+    <main class="container" style="margin-top: 50px;">
+        <div class="row">
+            <div class="col s8">
+                <div class="card">
+                    <div class="card-content">
+                        <h2 class="custom-text" style="margin-top: 7px;">{{story.title}}</h2>
+                        {{#each sentence}}
+                            <p class="flow-text">{{this}}</p>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            <div class="col s4 profile-card">
+                <div class="card ">
+                    <div class="card-content">
+                        <h3>{{story.author}}</h3>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">More from this author</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    {{>footer}}    
+</div>
