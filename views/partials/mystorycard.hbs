@@ -2,7 +2,8 @@
     <div class="card story-post">
         <div class="card-content">
             <a href="#" class="card-title custom-text">{{title}}</a>
-            <p>{{truncate content 150}}</p>
+            {{!-- <p>{{truncate content 150}}</p> --}}
+            <p class="truncate">{{content}}</p>
         </div>
         <div class="card-action">
             <a href="#">Edit</a>

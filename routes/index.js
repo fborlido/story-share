@@ -8,14 +8,8 @@ const Story = require('../models/Story');
 router.get('/', (req, res) => res.render('welcome'));
 
 // Dashboard
-router.get('/dashboard', ensureAuthenticated, (req, res) => {
-    /* Story.find((err, docs) => {
-        res.render('dashboard', {
-            stories: docs
-        });
-    }); */
-
-    Story.find().lean().exec((err, docs) => {
+router.get('/dashboard', ensureAuthenticated, async (req, res) => {
+    await Story.find().sort('-date').lean().exec((err, docs) => {
         res.render('dashboard', {
             stories: docs
         });

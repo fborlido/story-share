@@ -15,6 +15,10 @@
     margin-top: 7px;
 }
 
+.card-content {
+    overflow: hidden !important;
+}
+
 .welcome-btn {
     width: 200px;
 }
