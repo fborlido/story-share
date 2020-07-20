@@ -9,11 +9,10 @@ router.get('/', (req, res) => res.render('welcome'));
 
 // Dashboard
 router.get('/dashboard', ensureAuthenticated, async (req, res) => {
-    await Story.find().sort('-date').lean().exec((err, docs) => {
-        res.render('dashboard', {
-            stories: docs
-        });
-    })
+    const stories = await Story.find().sort('-date').populate('author').lean();
+    res.render('dashboard', {
+        stories: stories
+    });
 });
 
 module.exports = router;

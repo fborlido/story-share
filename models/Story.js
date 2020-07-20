@@ -10,9 +10,9 @@ const StorySchema = new mongoose.Schema({
         required: true
     },
     author: {
-        type: String,
-        required: true
-    },
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+      },
     date: {
         type: Date,
         default: Date.now

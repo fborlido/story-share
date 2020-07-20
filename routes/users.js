@@ -121,6 +121,14 @@ router.get('/logout', (req, res) => {
     res.redirect('/users/login');
 }) 
 
+// User Page
+router.get('/:id', async (req, res) => {
+    const user = await User.findById(req.params.id).lean();
+    res.render('user', {
+        user: user
+    });
+});
+
 function validateEmail(email) {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());

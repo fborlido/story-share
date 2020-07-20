@@ -6,7 +6,7 @@ const Story = require('../models/Story');
 
 // My Stories
 router.get('/mystories', ensureAuthenticated, (req, res) => { 
-    Story.find({ author: req.user.name }).sort('-date').lean().exec((err, docs) => {
+    Story.find({ author: req.user.id }).sort('-date').populate('author').lean().exec((err, docs) => {
         res.render('profile/mystories', {
             stories: docs
         });

@@ -37,7 +37,7 @@ router.post('/create', ensureAuthenticated, (req, res) => {
             content
         });
     } else {
-        var author = req.user.name;
+        var author = req.user.id;
         const newStory = new Story({
             title,
             content,
@@ -52,7 +52,7 @@ router.post('/create', ensureAuthenticated, (req, res) => {
 
 // Single Story Page
 router.get('/:id', ensureAuthenticated, async (req, res) => {
-    let story = await Story.findById(req.params.id).lean();
+    let story = await Story.findById(req.params.id).populate('author').lean();
     res.render('stories/showStory', {
         story,
         sentence: enterlines(story.content)
